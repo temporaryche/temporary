@@ -1,0 +1,87 @@
+  <div class="row" ng-controller="allProducts">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2><span class=""><span class="glyphicon glyphicon-menu-hamburger"></span>Available Products</span></h2>
+    </div>
+    <div class="col-md-6">
+      <h2><span class="pull-right""><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</span></h2>
+    </div>
+          
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+          <div class="row">
+            <div ng-hide="bidError" class="alert alert-danger">Error in Placing Bid</div>
+            <div ng-hide="bidSuccess" class="alert alert-info">Bid placed Successfully</div>
+            <div ng-hide="error" class="alert alert-danger">Some error occurred</div>
+            <div ng-hide="success" class="alert alert-info">Product Added to Cart!</div>
+          </div>
+    <div class="row" ng-repeat="product in allProductsInStock track by product.item_id">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title">{{product.item_name}}</h5>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>{{product.item_description}}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4 ng-if="product.buy_now">Price: {{product.item_price}}</h4>
+              <h4 ng-if="!product.buy_now">Initial Bidding: <span ng-bind="product.max_bid"></span></h4>
+            </div>
+            <div class="col-md-6">
+              <h4>Only {{product.quantity}} available in Stock!!</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Sold By: {{product.seller_id}}</h4>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-sm btn-info" ng-if="product.buy_now" ng-click="addToCart(product);">Add to Cart</button>
+              <input style="padding-right: 10px;" type="number" ng-if="!product.buy_now" ng-model="product.category"><button class="btn btn-sm btn-info" ng-if="!product.buy_now" ng-click="addMaxBid(product,maxBid);">Place Bid   </button>
+            </div>
+          </div>
+
+        </div>
+      </div>    
+    </div>
+
+    </div>
+
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+
+    <div class="row" ng-repeat="product in shoppingCart track by $index">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{product.item_name}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Quantities Ordered: {{product.quantity}}</h5>             
+            </div>
+            <div class="col-md-3">
+              <h5>Price: {{product.item_price}}</h5>              
+            </div>
+            <div class="col-md-3">
+              <span class="pull-right"><button class="btn btn-sm btn-danger" ng-click="removeFromCart(product.cart_id);">Remove</button></span>            
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+    <div class="row">
+      <span class="pull-right"><button class="btn btn-lg btn-primary" ng-click="checkout();">Checkout</button></span>
+    </div>
+    </div>
+</div>
+
+
+  </div>

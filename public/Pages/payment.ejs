@@ -1,0 +1,35 @@
+<div class="row" ng-controller="paymentController" style="margin-top: 50px;">
+
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title"><span class="glyphicon glyphicon-credit-card"></span> Credit Card Info</h5>
+        </div>
+        <div class="panel-body">
+        <table>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Card Number:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-model="cardNumber" required="required"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>CVV:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="Number" ng-model="cvv" required="required"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Expiration Date:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="Date" ng-model="expDate" required="required"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><button class="btn btn-primary" ng-click="finalPage();">Pay and Purchase</button></td>
+          </tr>
+        </table>
+        <div style="padding-top: 20px;">
+          <div ng-hide="error" class="alert alert-info">Enter a Valid Credit Card Info</div>
+        </div>
+        </div>
+      </div> 
+</div>
+<div class="col-md-4"></div>
+</div>

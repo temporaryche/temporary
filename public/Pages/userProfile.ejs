@@ -1,0 +1,128 @@
+  <div class="row" ng-controller="profileController">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2><span class=""><span class="glyphicon glyphicon-menu-hamburger"></span>Products Purchased</span></h2>
+    </div>
+    <div class="col-md-6">
+      <h2><span class="pull-right""></h2>
+    </div>
+          
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+
+    <div class="row" ng-repeat="product in purchaseditems track by $index">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title">{{product.item_name}}</h5>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>{{product.item_description}}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Price: {{product.price}}</h4>
+            </div>
+            <div class="col-md-6">
+              <h4>Quantities Purchased: {{product.quantity}}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Purchased with Card: {{product.seller_id}}</h4>
+            </div>
+
+          </div>
+
+        </div>
+      </div>    
+    </div>
+
+    <h2><span class=""><span class="glyphicon glyphicon-menu-hamburger"></span>Products Sold</span></h2>
+
+    <div class="row" ng-repeat="soldProduct in soldItems track by $index">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title">{{soldProduct.item_name}}</h5>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>{{soldProduct.item_description}}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Price: {{soldProduct.price}}</h4>
+            </div>
+            <div class="col-md-6">
+              <h4>Only {{soldProduct.quantity}} quantities Sold!</h4>
+            </div>
+          </div>
+
+        </div>
+      </div>    
+    </div>
+
+    </div>
+
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title"><span class="glyphicon glyphicon-home"></span>Address</h5>
+        </div>
+        <div class="panel-body">
+        <table>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Street:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="address" value={{address}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>City:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="city" value={{city}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>State:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="state" value={{state}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Country:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="country" value={{country}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>ZIP:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="zip" value={{zip}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Contact Details:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="cellNum" value={{cellNum}}></td>
+          </tr>
+          <tr>
+            <td colspan="2" ><label>Edit Address? <input type="checkbox" ng-model="checkbox"> </label></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><button class="btn btn-primary" ng-disabled="!checkbox" ng-click="editAddress();">Edit Address</button></td>
+          </tr>
+        </table>
+        <div style="padding-top: 20px;">
+          <div ng-hide="success" class="alert alert-info">Address Edited!!</div>
+        </div>
+        </div>
+      </div> 
+
+
+
+
+    </div>
+</div>
+
+
+  </div>

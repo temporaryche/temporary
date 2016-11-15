@@ -1,0 +1,50 @@
+<div class="row" ng-controller="checkoutAddress" style="margin-top: 50px;">
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title"><span class="glyphicon glyphicon-home"></span>Address</h5>
+        </div>
+        <div class="panel-body">
+        <table>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Street:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="address" value={{address}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>City:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="city" value={{city}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>State:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="state" value={{state}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Country:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="country" value={{country}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>ZIP:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="zip" value={{zip}}></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Contact Details:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-disabled="!checkbox" ng-model="cellNum" value={{cellNum}}></td>
+          </tr>
+          <tr>
+            <td colspan="2" ><label>Deliver to another Address? <input type="checkbox" ng-model="checkbox"> </label></td>
+          </tr>
+          <tr>
+            <td><button class="btn btn-primary" ng-disabled="!checkbox" ng-click="editAddress();">Edit Address</button></td>
+            <td style=" text-align: center;"><button class="btn btn-primary" ng-click="toPayment();">Proceed to Payment</button></td>
+          </tr>
+        </table>
+        <div style="padding-top: 20px;">
+          <div ng-hide="success" class="alert alert-info">Address Edited!!</div>
+        </div>
+        </div>
+      </div> 
+</div>
+<div class="col-md-4"></div>
+</div>

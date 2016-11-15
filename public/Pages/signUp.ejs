@@ -1,0 +1,50 @@
+  <div class="row" ng-controller="newAccountController" style="margin-top: 50px;">
+
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title"><span class="glyphicon glyphicon-ok-sign"></span> Sign Up</h5>
+        </div>
+        <div class="panel-body">
+        <form>
+        <table>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>First Name:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-model="firstName" required="required" autofocus="autofocus"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Last name:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-model="lastName" required="required" autofocus="autofocus"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Email Id:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="Email" ng-model="username" required="required" autofocus="autofocus"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Password:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="password" ng-model="password" required="required" autofocus="autofocus"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Confirm Password:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="password" required="required" autofocus="autofocus"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><button class="btn btn-info" ng-click="createAccount();">Create Account</button></td>
+          </tr>
+        </table>
+        </form>
+        <div style="padding-top: 20px;">
+          <div ng-hide="error" class="alert alert-info">Please enter valid Email ID</div>
+          <div ng-hide="success" class="alert alert-info">Account Created!</div>
+        </div>
+        </div>
+      </div> 
+</div>
+<div class="col-md-4"></div>
+
+
+
+
+  </div>

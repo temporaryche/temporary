@@ -1,0 +1,55 @@
+  <div class="row" ng-controller="sellItem" style="margin-top: 50px;">
+
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h5 class="panel-title"><span class="glyphicon glyphicon-lamp"></span> Enter Advertisement Details</h5>
+        </div>
+        <div class="panel-body">
+        <form>
+        <table>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Name:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-model="itemName" required="required"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Description:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-model="itemDescription" required="required"></td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Quantity:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="Number" ng-model="quantity" required="required"></td>
+          </tr>
+          <tr ng-show="!buyNow">
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Price:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="text" ng-model="itemPrice"></td>
+          </tr>
+          <tr ng-show="buyNow">
+            <td style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Initial Bidding:</label></td>
+            <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="Number" ng-model="initialBidding"></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding-bottom: 15px; padding-right: 10px; text-align: right;"><label>Want to go for Bidding?</label><input type="checkbox" ng-model="buyNow"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center" style="padding-left: 30px;"><button  class="btn btn-info" ng-click="postForSell();">Post Advertisement</button></td>
+          </tr>
+        </table>
+        </form>
+        <div style="padding-top: 20px;">
+          <div ng-hide="error" class="alert alert-info">Enter a Valid Credit Card Info</div>
+          <div ng-hide="success" class="alert alert-info">Advertisement successfully posted!</div>
+        </div>
+        </div>
+      </div> 
+</div>
+<div class="col-md-4"></div>
+
+
+
+
+
+  </div>
+

@@ -1,0 +1,53 @@
+  <div class="row" ng-controller="loginController" style="margin-top: 100px;">
+  <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><span class="glyphicon glyphicon-ok-sign"></span> Login</div>
+      <div class="panel-body form-group">
+      <form>
+      <table>
+      <tr>
+        <td style="padding-bottom: 15px; padding-right: 10px;"><label>Username:</label></td>
+        <td style="padding-left: : 20px; padding-bottom: 20px; column-width: 300px;"><input type="text" ng-model="username" required="required" autofocus="autofocus" placeholder="Email ID"></td>
+      </tr>
+      <tr>
+        <td style="padding-bottom: 15px; padding-right: 10px;"><label>Password:</label></td>
+        <td style="padding-left: : 20px; padding-bottom: 20px;"><input type="password" ng-model="password" required="required" autofocus="autofocus" placeholder="Password"></td>
+      </tr>
+      <tr colspan=2>
+        <td style="text-align: center;" colspan="2"><button class="btn btn-primary" ng-click="login();">Login</button></td>
+      </tr>
+      <tr ng-hide="error">
+        <td colspan="2" style="text-align: center; padding-top: 20px; padding-bottom: 20px;"><label>New User? Sign Up:</label><button ng-click="signUp();" class="btn btn-info">Sign Up</button></td>
+        
+      </tr>
+      <tr>
+        <td colspan="2"><div ng-hide="error" class="alert alert-danger">Invalid Username or Password</div><br></td>
+      </tr>
+    </table>
+    </form>
+      </div>
+    </div>
+    <!--<table>
+      <tr>
+        <td><label>Username:</label></td>
+        <td><input type="text" ng-model="username"></td>
+      </tr>
+      <tr>
+        <td><label>Password:</label></td>
+        <td><input type="password" ng-model="password"></td>
+      </tr>
+      <tr colspan=2>
+        <td><button ng-click="login();">Login</button></td>
+      </tr>
+    </table>
+
+    <input type="text" ng-model="username"><br>
+      <input type="text" ng-model="password"><br>
+      <button ng-click="login();">Login</button><br>
+      <div ng-hide="error">Invalid Login</div>
+      <div ng-hide="success">Logged IN</div><br>
+      New User: <button ng-click="signUp();">Sign Up</button>-->
+    </div>
+    <div class="col-md-4"></div>
+  </div>
