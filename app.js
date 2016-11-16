@@ -21,8 +21,8 @@ app.use(session({
 	secret: 'cmpe273_ebay',    
 	duration: 30 * 60 * 1000,
 	activeDuration: 5 * 60 * 1000,  }));
-app.set('port', process.env.VCAP_APP_PORT);
-app.set('host', process.env.VCAP_APP_HOST);
+//app.set('port', process.env.VCAP_APP_PORT);
+//app.set('host', process.env.VCAP_APP_HOST);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -59,6 +59,13 @@ app.post('/placeBid', product.placeBid);
 app.post('/getSoldItems', user.getSoldItems);
 app.post('/getPurchasedItems', user.getPurchasedItems);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on host :'+app.get('host')+' on port ' + app.get('port'));
+var host = (process.env.VCAP_APP_HOST || 'localhost');
+var port = (process.env.VCAP_APP_PORT || 3001);
+
+var server = app.listen(port, host, function(){
+  console.log("Server starting on "+host+" : "+port);
 });
+
+//http.createServer(app).listen(app.get('port'), function(){
+// console.log('Express server listening on host :'+app.get('host')+' on port ' + app.get('port'));
+//});
