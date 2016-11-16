@@ -21,8 +21,8 @@ app.use(session({
 	secret: 'cmpe273_ebay',    
 	duration: 30 * 60 * 1000,
 	activeDuration: 5 * 60 * 1000,  }));
-app.set('port', process.env.VCAP_APP_PORT || 3001);
-app.set('host', process.env.VCAP_APP_HOST || 'localhost');
+app.set('port', process.env.VCAP_APP_PORT);
+app.set('host', process.env.VCAP_APP_HOST);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
